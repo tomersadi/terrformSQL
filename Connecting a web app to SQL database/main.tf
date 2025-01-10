@@ -30,8 +30,8 @@ resource "azurerm_mssql_firewall_rule" "allowmyClient" {
   for_each = var.dbapp_environment.production.server
   name             = "AllowClientIP"
   server_id        = azurerm_mssql_server.sqlserver["${each.key}"].id
-  start_ip_address = "94.204.16.49"
-  end_ip_address   = "94.204.16.49"
+  start_ip_address = "94.204.16.xx"
+  end_ip_address   = "94.204.16.xx"
 }
 
 resource "null_resource" "database_setup"{
